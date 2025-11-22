@@ -28,19 +28,16 @@ migrate = Migrate(app, db)
 swagger = Swagger(app, template=swagger_template)
 
 
-# -------------------------------------
-# MODELS
-# -------------------------------------
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(256), nullable=False)
-    role = db.Column(db.String(20), nullable=False)  # admin/user
+    role = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(200), nullable=False)
 
 
 class PassportApplication(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     full_name = db.Column(db.String(150), nullable=False)
     dob = db.Column(db.String(20), nullable=False)
