@@ -1,0 +1,42 @@
+swagger: "2.0"
+info:
+  title: Passport Management API
+  version: 1.0.0
+  description: API documentation for Passport Management System
+
+host: https://two0060603-passport-application.onrender.com
+basePath: /
+schemes:
+  - http
+
+paths:
+
+  /register:
+    post:
+      tags:
+        - Authentication
+      summary: Register a new user
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            required: [username, password, role, email]
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+              role:
+                type: string
+                enum: [admin, user]
+              email:
+                type: string
+      responses:
+        201:
+          description: User registered successfully
+        400:
+          description: Missing fields
+        409:
+          description: Username already exists
