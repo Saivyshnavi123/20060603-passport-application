@@ -49,6 +49,38 @@ class PassportApplication(db.Model):
     status = db.Column(db.String(20), default="pending")
     user = db.relationship('User', backref='applications')
 
+
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.get_json(silent=True)
+    if not data:
+        return jsonify({"message": "Invalid or missing JSON body"}), 400
+
+    required = ['username', 'password', 'role', 'email']
+    if not all(field in data and data[field] for field in required):
+        return jsonify({"message": "All fields are required"}), 400
+
+    if User.query.filter_by(username=data['username']).first():
+        return jsonify({"message": "Username already exists"}), 409
+
+    hashed = generate_password_hash(
+        data['password'],
+        method='pbkdf2:sha256'
+    )
+
+    user = User(
+        username=data['username'],
+        password=hashed,
+        role=data['role'],
+        email=data['email']
+    )
+
+    db.session.add(user)
+    db.session.commit()
+
+    return jsonify({"message": "User registered successfully"}), 201
+
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
