@@ -1,11 +1,16 @@
 import os
+
 from flask import Flask, request, jsonify
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
 import yaml
+import os
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
+from sqlalchemy.exc import SQLAlchemyError
+
 
 # -------------------------------------
 # CONFIG
@@ -125,6 +130,41 @@ def login():
         "role": user.role
     }), 200
 
+
+@app.route('/slots', methods=['GET'])
+def check_slots():
+    try:
+        date_str = request.args.get('date')
+
+        if not date_str:
+            return jsonify({"error": "date parameter is required"}), 400
+
+        try:
+            appointment_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+        except ValueError:
+            return jsonify({"error": "Invalid date format. Use YYYY-MM-DD"}), 400
+
+        count = PassportApplication.query.filter_by(appointment_date=appointment_date).count()
+
+        remaining = max(0, 10 - count)
+
+        return jsonify({
+            "date": date_str,
+            ""
+            "": count,
+            "remaining_slots": remaining
+        }), 200
+
+    except SQLAlchemyError as e:
+        return jsonify({
+            "error": "Database error occurred",
+            "details": str(e)
+        }), 500
+    except Exception as e:
+        return jsonify({
+            "error": "Unexpected server error",
+            "details": str(e)
+        }), 500
 
 
 if __name__ == '__main__':

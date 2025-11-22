@@ -62,3 +62,20 @@ paths:
           description: Login successful
         401:
           description: Invalid credentials
+
+  /slots:
+    get:
+      tags:
+        - Slots
+      summary: Check available slots for a given date
+      parameters:
+        - name: date
+          in: query
+          required: true
+          type: string
+      responses:
+        200:
+          description: Available slots
+        400:
+          description: Missing date parameter
+
