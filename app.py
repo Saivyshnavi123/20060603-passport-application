@@ -80,6 +80,37 @@ def register():
 
     return jsonify({"message": "User registered successfully"}), 201
 
+@app.route('/login', methods=['POST'])
+def login():
+    # Try to parse JSON safely
+    data = request.get_json(silent=True)
+    if not data:
+        return jsonify({"message": "Invalid or missing JSON body"}), 400
+
+    # Validate required fields
+    username = data.get('username')
+    password = data.get('password')
+
+    if not username or not password:
+        return jsonify({"message": "Username and password are required"}), 400
+
+    # Check if user exists
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        return jsonify({"message": "Invalid credentials"}), 401
+
+    # Validate password
+    if not check_password_hash(user.password, password):
+        return jsonify({"message": "Invalid credentials"}), 401
+
+    # Success
+    return jsonify({
+        "message": "Login successful",
+        "user_id": user.id,
+        "role": user.role
+    }), 200
+
+
 
 if __name__ == '__main__':
     with app.app_context():
