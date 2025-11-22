@@ -49,6 +49,21 @@ class PassportApplication(db.Model):
     status = db.Column(db.String(20), default="pending")
     user = db.relationship('User', backref='applications')
 
+def get_user(user_id):
+    return User.query.get(user_id)
+
+
+def generate_sequential_passport_number():
+    last = PassportApplication.query.order_by(PassportApplication.id.desc()).first()
+    if last and last.passport_number:
+        try:
+            num = int(last.passport_number[1:]) + 1
+        except:
+            num = last.id + 1
+    else:
+        num = 1
+    return f"P{num:06d}"
+
 
 @app.route('/register', methods=['POST'])
 def register():
