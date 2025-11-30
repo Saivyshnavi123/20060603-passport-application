@@ -1,0 +1,251 @@
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: white;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.drawer-header {
+  padding: 20px;
+  background: #198754;
+  color: white;
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.message {
+  padding: 15px 20px;
+  margin: 0;
+  background: #d4edda;
+  color: #155724;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.drawer-content {
+  flex: 1;
+  padding: 20px;
+  padding-bottom: 100px;
+  overflow-y: auto;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  z-index: 3000;
+  min-width: 250px;
+}
+
+.toast-success {
+  background: #198754;
+  color: white;
+}
+
+.toast-error {
+  background: #dc3545;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+
+.form-group input::placeholder {
+  color: #2d2d2d;
+  font-weight: normal;
+}
+
+.slot-info {
+  background: #f8f9fa;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.slot-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.slot-info .available {
+  color: #198754;
+  font-weight: bold;
+}
+
+.slot-info .unavailable {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.no-slots {
+  color: #dc3545;
+  font-size: 14px;
+  margin: 10px 0 0 0;
+  font-weight: bold;
+}
+
+.form-footer {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  padding: 10px 20px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background: #198754;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+}
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 2001;
+  width: 400px;
+  max-width: 90%;
+}
+
+.dialog-header {
+  background: #198754;
+  color: white;
+  padding: 15px 20px;
+}
+
+.dialog-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.dialog-content {
+  padding: 20px;
+}
+
+.dialog-content p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.dialog-content .available {
+  color: #198754;
+  font-weight: bold;
+}
+
+.dialog-content .unavailable {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.warning-message {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px;
+  border-left: 4px solid #ffc107;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-left: 4px solid #198754;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.dialog-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #ddd;
+  text-align: right;
+}
+
+.dialog-btn {
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ok-btn {
+  background: #198754;
+  color: white;
+}
+
+.change-btn {
+  background: #dc3545;
+  color: white;
+}

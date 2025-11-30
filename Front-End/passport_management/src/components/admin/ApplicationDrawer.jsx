@@ -4,12 +4,12 @@ import './ApplicationDrawer.css';
 
 const ApplicationDrawer = ({ application, onClose, onRefresh }) => {
   const [message, setMessage] = useState('');
-
+  
   // Reset message when application changes
   useEffect(() => {
     setMessage('');
   }, [application]);
-
+  
   if (!application) return null;
 
   const handleApprove = async () => {
@@ -55,13 +55,13 @@ const ApplicationDrawer = ({ application, onClose, onRefresh }) => {
         <div className="drawer-header">
           <h2>Application Details</h2>
         </div>
-
+        
         {message && (
           <div className="message">
             {message}
           </div>
         )}
-
+        
         <div className="drawer-content">
           <div className="detail-row">
             <strong>Application ID:</strong>

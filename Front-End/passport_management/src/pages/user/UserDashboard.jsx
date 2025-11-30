@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import Navbar from '../../components/common/Navbar';
-import ApplicationDrawer from '../../components/admin/ApplicationDrawer';
+import PassportApplicationForm from '../../components/user/PassportApplicationForm';
 import api from '../../services/api';
 import './Dashboard.css';
 
-const AdminDashboard = () => {
+const UserDashboard = () => {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [selectedApplication, setSelectedApplication] = useState(null);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     fetchApplications();
@@ -18,8 +18,8 @@ const AdminDashboard = () => {
     try {
       setLoading(true);
       const userId = localStorage.getItem('user_id');
-      const response = await api.get(`/admin/applications?user_id=${userId}`);
-      setApplications(response);
+      const response = await api.get(`/user/applications?user_id=${userId}`);
+      setApplications(response.applications);
       setLoading(false);
     } catch (err) {
       setError(err.message || 'Failed to fetch applications');
@@ -27,15 +27,15 @@ const AdminDashboard = () => {
     }
   };
 
-  const handleRowClick = (app) => {
-    setSelectedApplication(app);
+  const handleApplyClick = () => {
+    setShowForm(true);
   };
 
-  const handleCloseDrawer = () => {
-    setSelectedApplication(null);
+  const handleCloseForm = () => {
+    setShowForm(false);
   };
 
-  const handleRefresh = () => {
+  const handleFormSuccess = () => {
     fetchApplications();
   };
 
@@ -44,12 +44,12 @@ const AdminDashboard = () => {
       <Navbar />
       <div className="dashboard-content">
         <div className="dashboard-container">
-          <h1 className="dashboard-title">Admin Dashboard</h1>
-          <p className="dashboard-subtitle">Manage passport applications</p>
+          <h1 className="dashboard-title">User Dashboard</h1>
+          <p className="dashboard-subtitle">Apply for passport and track your applications</p>
           
           <div className="dashboard-cards">
             <div className="dashboard-card">
-              <h3>Total Applications</h3>
+              <h3>My Applications</h3>
               <p className="card-number">{applications.length}</p>
             </div>
             
@@ -75,7 +75,10 @@ const AdminDashboard = () => {
             <div className="loading">Loading applications...</div>
           ) : (
             <div className="applications-list">
-              <h2>Applications List</h2>
+              <div className="list-header">
+                <h2>My Applications</h2>
+                <button className="apply-btn" onClick={handleApplyClick}>Apply for Passport</button>
+              </div>
               <table className="applications-table">
                 <thead>
                   <tr>
@@ -92,7 +95,7 @@ const AdminDashboard = () => {
                 </thead>
                 <tbody>
                   {applications.map((app) => (
-                    <tr key={app.id} onClick={() => handleRowClick(app)}>
+                    <tr key={app.id}>
                       <td>{app.id}</td>
                       <td>{app.full_name}</td>
                       <td>{app.passport_number}</td>
@@ -117,13 +120,14 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      <ApplicationDrawer
-        application={selectedApplication}
-        onClose={handleCloseDrawer}
-        onRefresh={handleRefresh}
-      />
+      {showForm && (
+        <PassportApplicationForm
+          onClose={handleCloseForm}
+          onSuccess={handleFormSuccess}
+        />
+      )}
     </div>
   );
 };
 
-export default AdminDashboard;
+export default UserDashboard;

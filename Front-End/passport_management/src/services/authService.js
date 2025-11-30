@@ -5,7 +5,7 @@ const authService = {
   // Login
   login: async (credentials) => {
     const response = await api.post('/login', credentials);
-
+    
     // API returns: {message, role, user_id}
     if (response.role && response.user_id) {
       // Create user object from response
@@ -14,13 +14,13 @@ const authService = {
         role: response.role,
         user_id: response.user_id
       };
-
+      
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('username', credentials.username);
       localStorage.setItem('role', response.role);
       localStorage.setItem('user_id', response.user_id.toString());
     }
-
+    
     return response;
   },
 
