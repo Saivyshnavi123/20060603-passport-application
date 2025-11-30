@@ -1,10 +1,10 @@
-# 🛂 Passport Management System
+# Passport Management System
 
 A web application for managing passport applications with separate dashboards for users and administrators.
 
 ---
 
-## ✨ What This App Does
+## What This App Does
 
 **For Users:**
 - Register and login
@@ -18,7 +18,7 @@ A web application for managing passport applications with separate dashboards fo
 
 ---
 
-## 🛠️ Built With
+## Built With
 
 - React (JavaScript library for building UI)
 - React Router (for page navigation)
@@ -26,7 +26,7 @@ A web application for managing passport applications with separate dashboards fo
 
 ---
 
-## 📦 What You Need First
+## What You Need First
 
 ### 1. Install Node.js
 
@@ -46,7 +46,7 @@ You should see version numbers.
 
 ---
 
-## 🚀 How to Run This Project
+## How to Run This Project
 
 ### Step 1: Open Project Folder in Command Prompt
 
@@ -54,7 +54,7 @@ You should see version numbers.
 1. Open the project folder in File Explorer (e.g., `D:\Passport Management`)
 2. Click on the address bar at top
 3. Type `cmd` and press Enter
-4. Command Prompt opens! ✅
+4. Command Prompt opens! 
 
 **Or use this:**
 ```cmd
@@ -88,7 +88,7 @@ npm start
 **What happens:**
 - Wait 10-30 seconds
 - Browser opens automatically at `http://localhost:3000`
-- You see the Login page! 🎉
+- You see the Login page! 
 
 **If browser doesn't open:**
 - Open any browser manually
@@ -124,7 +124,7 @@ To run again: `npm start`
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Passport Management/
@@ -140,7 +140,7 @@ Passport Management/
 
 ---
 
-## 🔧 Common Commands
+##  Common Commands
 
 ```cmd
 npm install          # Install dependencies (first time)
@@ -151,7 +151,7 @@ npm run build        # Create production build
 
 ---
 
-## ❗ Common Problems
+##  Common Problems
 
 ### "npm is not recognized"
 - Node.js not installed
@@ -182,7 +182,7 @@ npm install
 
 ---
 
-## 📌 Important Info
+##  Important Info
 
 **Backend API:** `https://two0060603-passport-application.onrender.com`
 
@@ -194,7 +194,7 @@ npm install
 
 ---
 
-## 📞 Need Help?
+## Need Help?
 
 1. Check error message in terminal
 2. Press F12 in browser → check Console tab
