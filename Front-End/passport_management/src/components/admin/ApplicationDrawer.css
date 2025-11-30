@@ -1,0 +1,92 @@
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: white;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-header {
+  padding: 20px;
+  background: #198754;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.message {
+  padding: 15px 20px;
+  margin: 0;
+  background: #d4edda;
+  color: #155724;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.drawer-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.detail-row {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.detail-row strong {
+  color: #333;
+  font-weight: bold;
+}
+
+.detail-row span {
+  color: #666;
+  margin-left: 10px;
+}
+
+.drawer-footer {
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.approve-btn {
+  padding: 10px 20px;
+  background: #198754;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.reject-btn {
+  padding: 10px 20px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
