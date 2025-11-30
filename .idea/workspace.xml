@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b2ea4ec-fd53-4bb9-806d-8d2f372b4864" name="Changes" comment="Initial Commit for front-End">
-      <change afterPath="$PROJECT_DIR$/Front-End/passport_management/public/assets/passport_icons.png" afterDir="false" />
+    <list default="true" id="3b2ea4ec-fd53-4bb9-806d-8d2f372b4864" name="Changes" comment="Updated App.jss and added css for the application.">
+      <change afterPath="$PROJECT_DIR$/Front-End/passport_management/src/services/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front-End/passport_management/src/services/authService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/passport_management/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/passport_management/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/passport_management/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/passport_management/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/passport_management/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/passport_management/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/passport_management/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/passport_management/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/passport_management/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Flask Main" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -121,7 +116,7 @@
       <updated>1763494936237</updated>
       <workItem from="1763494937255" duration="226000" />
       <workItem from="1763570527080" duration="3507000" />
-      <workItem from="1764516638559" duration="121000" />
+      <workItem from="1764516638559" duration="308000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -155,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764442450702</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated App.jss and added css for the application.">
+      <option name="closed" value="true" />
+      <created>1764516854532</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764516854532</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +169,8 @@
     <MESSAGE value="Updated !" />
     <MESSAGE value="Refactored!" />
     <MESSAGE value="Initial Commit for front-End" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit for front-End" />
+    <MESSAGE value="Updated App.jss and added css for the application." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated App.jss and added css for the application." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/passport_application$passport_application.coverage" NAME="passport-application Coverage Results" MODIFIED="1763578043553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
