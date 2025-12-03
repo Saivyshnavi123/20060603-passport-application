@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b2ea4ec-fd53-4bb9-806d-8d2f372b4864" name="Changes" comment="Updated package.json">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/passport-application.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/passport-application.iml" afterDir="false" />
+    <list default="true" id="3b2ea4ec-fd53-4bb9-806d-8d2f372b4864" name="Changes" comment="Updated swagger and app.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Back-End/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/swagger.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +139,7 @@
       <workItem from="1763494937255" duration="226000" />
       <workItem from="1763570527080" duration="3507000" />
       <workItem from="1764516638559" duration="9291000" />
-      <workItem from="1764783431659" duration="1032000" />
+      <workItem from="1764783431659" duration="1569000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -239,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764525713667</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Updated swagger and app.py">
+      <option name="closed" value="true" />
+      <created>1764784642354</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1764784642355</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +261,8 @@
     <MESSAGE value="Added Admin and user." />
     <MESSAGE value="Completed the front end with implementation." />
     <MESSAGE value="Updated package.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated package.json" />
+    <MESSAGE value="Updated swagger and app.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated swagger and app.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/passport_application$app.coverage" NAME="app Coverage Results" MODIFIED="1764784344364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Back-End" />

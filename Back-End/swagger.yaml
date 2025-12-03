@@ -190,25 +190,3 @@ paths:
           description: Unauthorized
         404:
           description: Application not found
-
-  /admin/kpi:
-    get:
-      tags:
-        - Admin
-      summary: Get overall KPI statistics for passport applications
-      description: Returns total, approved, rejected, and in-progress application counts.
-      parameters:
-        - name: user_id
-          in: query
-          type: integer
-          required: true
-          description: Admin user ID requesting KPI data.
-      responses:
-        '200':
-          description: KPI statistics retrieved successfully
-
-        '403':
-          description: Forbidden — Only admin can access KPI
-
-        '500':
-          description: Unexpected server or database error
