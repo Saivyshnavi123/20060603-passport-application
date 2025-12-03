@@ -11,6 +11,34 @@ schemes:
 
 paths:
 
+  /user/applications:
+    get:
+      tags:
+        - User
+      summary: Get all passport applications for a user
+      description: Returns the list of passport applications submitted by a specific user.
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          description: The ID of the user whose applications should be fetched.
+          type: integer
+      responses:
+        '200':
+          description: List of user's passport applications
+
+        '400':
+          description: Missing or invalid user_id parameter
+
+        '403':
+          description: Only non-admin users can access this API
+
+        '404':
+          description: User not found
+
+        '500':
+          description: Server or database error
+
   /register:
     post:
       tags:
@@ -40,6 +68,7 @@ paths:
           description: Missing fields
         409:
           description: Username already exists
+
   /login:
     post:
       tags:
@@ -51,7 +80,7 @@ paths:
           required: true
           schema:
             type: object
-            required: [ username, password ]
+            required: [username, password]
             properties:
               username:
                 type: string
@@ -79,3 +108,107 @@ paths:
         400:
           description: Missing date parameter
 
+  /passport/apply:
+    post:
+      tags:
+        - Passport
+      summary: Apply for a passport
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            required: [user_id, full_name, dob, nationality, appointment_date]
+            properties:
+              user_id:
+                type: integer
+              full_name:
+                type: string
+              dob:
+                type: string
+              nationality:
+                type: string
+              gender:
+                type: string
+              place_of_birth:
+                type: string
+              appointment_date:
+                type: string
+      responses:
+        201:
+          description: Application submitted
+        400:
+          description: Missing fields or no slots
+        403:
+          description: Forbidden (not a user)
+
+  /admin/applications:
+    get:
+      tags:
+        - Admin
+      summary: View all passport applications
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          type: integer
+      responses:
+        200:
+          description: List of applications
+        403:
+          description: Unauthorized (only admin)
+
+  /admin/application/{app_id}/status:
+    patch:
+      tags:
+        - Admin
+      summary: Update application status
+      parameters:
+        - name: app_id
+          in: path
+          required: true
+          type: integer
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            required: [user_id, status]
+            properties:
+              user_id:
+                type: integer
+              status:
+                type: string
+                enum: [pending, approved, rejected, completed]
+      responses:
+        200:
+          description: Status updated
+        400:
+          description: Invalid status
+        403:
+          description: Unauthorized
+        404:
+          description: Application not found
+
+  /admin/kpi:
+    get:
+      tags:
+        - Admin
+      summary: Get overall KPI statistics for passport applications
+      description: Returns total, approved, rejected, and in-progress application counts.
+      parameters:
+        - name: user_id
+          in: query
+          type: integer
+          required: true
+          description: Admin user ID requesting KPI data.
+      responses:
+        '200':
+          description: KPI statistics retrieved successfully
+
+        '403':
+          description: Forbidden — Only admin can access KPI
+
+        '500':
+          description: Unexpected server or database error
