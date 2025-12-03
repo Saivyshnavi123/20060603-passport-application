@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3b2ea4ec-fd53-4bb9-806d-8d2f372b4864" name="Changes" comment="Updated swagger.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front-End/passport_management/src/components/auth/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/passport_management/src/components/auth/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back-End/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Back-End/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front-End/passport_management/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front-End/passport_management/src/services/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,17 @@
         <option value="Flask Main" />
         <option value="JavaScript File" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -140,7 +152,7 @@
       <workItem from="1763570527080" duration="3507000" />
       <workItem from="1764516638559" duration="9291000" />
       <workItem from="1764783431659" duration="2197000" />
-      <workItem from="1765115938264" duration="620000" />
+      <workItem from="1765115938264" duration="1735000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -254,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764785018354</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Updated swagger.">
+      <option name="closed" value="true" />
+      <created>1765116586319</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1765116586319</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +291,7 @@
     <MESSAGE value="Completed the front end with implementation." />
     <MESSAGE value="Updated package.json" />
     <MESSAGE value="Updated swagger and app.py" />
+    <MESSAGE value="Fixed the role for regular user" />
     <MESSAGE value="Updated swagger." />
     <option name="LAST_COMMIT_MESSAGE" value="Updated swagger." />
   </component>

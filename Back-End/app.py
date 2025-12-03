@@ -137,7 +137,7 @@ def login():
     # Check if user exists
     user = User.query.filter_by(username=username).first()
     if not user:
-        return jsonify({"message": "Invalid credentials"}), 401
+        return jsonify({"message": "User doesn't exist. Please Register"}), 401
 
     # Validate password
     if not check_password_hash(user.password, password):

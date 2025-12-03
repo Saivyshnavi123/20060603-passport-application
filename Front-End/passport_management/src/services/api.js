@@ -1,5 +1,5 @@
 // Generic API utility for all HTTP methods
-const BASE_URL = 'https://two0060603-passport-application.onrender.com';
+const BASE_URL = ' http://127.0.0.1:5000';
 
 class ApiService {
   constructor(baseURL) {
